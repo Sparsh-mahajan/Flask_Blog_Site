@@ -1,5 +1,6 @@
 from email import message
 from pkgutil import ImpImporter
+import sqlite3
 import bcrypt
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
@@ -8,7 +9,7 @@ from flask_login import LoginManager
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '7f878d67f13db1889f356959d595445e'
-app.config['SQLALCHEMY_DATABSE_URI'] = 'sqlite:///site.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
