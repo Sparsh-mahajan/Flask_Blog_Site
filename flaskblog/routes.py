@@ -1,7 +1,5 @@
 import secrets
 import os
-from turtle import title
-from PIL import Image
 from flask import redirect, render_template, url_for, flash, request, abort
 import flask
 from flaskblog.forms import (RegistrationForm, LoginForm, UpdateAccountForm,
