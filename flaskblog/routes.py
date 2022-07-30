@@ -1,5 +1,6 @@
 import secrets
 import os
+from PIL import Image
 from flask import redirect, render_template, url_for, flash, request, abort
 import flask
 from flaskblog.forms import (RegistrationForm, LoginForm, UpdateAccountForm,
@@ -14,7 +15,7 @@ from flask_mail import Message
 def Home():
     page = request.args.get('page', default=1, type=int)
     posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=5)
-    return render_template('Home.html', posts=posts)
+    return render_template('home.html', posts=posts)
 
 @app.route("/about")
 def About():
